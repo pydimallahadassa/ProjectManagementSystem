@@ -1,0 +1,5 @@
+package com.tasks.exception;
+
+public class TaskExceptionHandler {
+
+}

@@ -1,0 +1,27 @@
+package com.tasks.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.tasks.entity.ErrorResponse;
+
+@ControllerAdvice
+public class TaskExceptionHandler {
+	
+	@ExceptionHandler(TaskExistsException.class)
+	public ResponseEntity<ErrorResponse> handleException(TaskExistsException e) {
+
+		ErrorResponse error = new ErrorResponse(e.getMessage());
+		return new ResponseEntity<ErrorResponse>(error, HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(TaskNotFoundException.class)
+	public ResponseEntity<ErrorResponse> handleException(TaskNotFoundException e) {
+
+		ErrorResponse error = new ErrorResponse(e.getMessage());
+		return new ResponseEntity<ErrorResponse>(error, HttpStatus.BAD_REQUEST);
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.admin.entity;
+
+public class Employee {
+	
+	private long empId;
+	private String empName;
+	private String empEmail;
+	private String empContact;
+
+}

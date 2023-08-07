@@ -1,0 +1,63 @@
+package com.tasks.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tasks.entity.Task;
+import com.tasks.repository.ITaskRepository;
+
+@Service
+public class TaskServiceImpl implements ITaskService {
+	
+	@Autowired
+	ITaskRepository taskRepo;
+
+	@Override
+	public Task addTask(Task task) {
+		Task newTask = taskRepo.save(task);
+		return newTask;
+	}
+
+	@Override
+	public Task updateTask(int taskId, Task task) {
+		Optional<Task> t1 = taskRepo.findById(taskId);
+		Task updatedTask = t1.get();
+		updatedTask.setTaskName(task.getTaskName());
+		updatedTask.setAllocatedEmp(task.getAllocatedEmp());
+		updatedTask.setTimeDuration(task.getTimeDuration());
+		updatedTask.setComment(task.getComment());
+		taskRepo.save(updatedTask);
+		return updatedTask;
+	}
+
+	@Override
+	public Task deleteTask(int taskId) {
+		Optional<Task> taskOpt = taskRepo.findById(taskId);
+		Task t1 = taskOpt.get();
+		taskRepo.deleteById(taskId);
+		return t1;
+	}
+
+	@Override
+	public Task getTaskById(int taskId) {
+		Optional<Task> t1=taskRepo.findById(taskId);
+		Task task = t1.get();
+		return task;
+	}
+
+	@Override
+	public List<Task> getAllTasks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Task getTaskByEmp(String emp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

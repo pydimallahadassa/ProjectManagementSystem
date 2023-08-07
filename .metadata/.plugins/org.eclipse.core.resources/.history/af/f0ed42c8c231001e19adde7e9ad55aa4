@@ -1,0 +1,23 @@
+package com.tasks.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tasks.entity.Task;
+import com.tasks.service.TaskServiceImpl;
+
+@RestController
+public class TaskController {
+	
+	@Autowired
+	TaskServiceImpl taskServ;
+	
+	ResponseEntity<Task> addTask(@RequestBody Task task){
+		Task newTask = taskServ.addTask(task);
+		return new ResponseEntity<>(newTask, HttpStatus.CREATED);
+	}
+
+}
