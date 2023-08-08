@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.reactive.function.client.WebClient;
 
+import com.tasks.entity.Employee;
 import com.tasks.entity.Task;
 import com.tasks.exception.TaskExistsException;
 import com.tasks.exception.TaskNotFoundException;
@@ -27,6 +29,9 @@ public class TaskController {
 	
 	@Autowired
 	TaskServiceImpl taskServ;
+	
+	@Autowired
+	private WebClient.Builder webClient;
 	
 	private static Logger logger = LogManager.getLogger();
 	
@@ -70,13 +75,24 @@ public class TaskController {
 		return new ResponseEntity<>(tasks,HttpStatus.OK);
 	}
 	
-	@GetMapping("/getByName/{allocatedEmp}")
-	ResponseEntity<Task> getTaskByEmp(@PathVariable String allocatedEmp) throws TaskNotFoundException{
-		logger.info("Request to view a task by taskname");
-		Task task = taskServ.getTaskByEmp(allocatedEmp);
-		logger.info("Successfully viewed a task by taskname");
+//	@GetMapping("/getByName/{allocatedEmp}")
+//	ResponseEntity<Task> getTaskByEmp(@PathVariable String allocatedEmp) throws TaskNotFoundException{
+//		logger.info("Request to view a task by taskname");
+//		Task task = taskServ.getTaskByEmp(allocatedEmp);
+//		logger.info("Successfully viewed a task by taskname");
+//		return new ResponseEntity<>(task,HttpStatus.OK);
+//	}
+	
+	@GetMapping("/getByEmpId/{empId}")
+	ResponseEntity<Task> getByEmpId(@PathVariable long empId){
+		logger.info("Request to view a task by empId");
+		Task task = taskServ.getByEmpId(empId);
+		logger.info("Successfully viewed a task by empId");
 		return new ResponseEntity<>(task,HttpStatus.OK);
 	}
+	
+	
+	
 	
 
 }

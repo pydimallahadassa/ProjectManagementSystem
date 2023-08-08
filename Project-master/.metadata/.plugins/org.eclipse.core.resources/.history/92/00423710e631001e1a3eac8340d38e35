@@ -1,0 +1,9 @@
+package com.project.exception;
+
+public class ProjectExistsException extends Exception {
+	public AdminExistsException(String msg) {
+		super(msg);
+	}
+	
+
+}

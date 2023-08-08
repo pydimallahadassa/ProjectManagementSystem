@@ -1,0 +1,49 @@
+package com.project.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.entity.Project;
+import com.project.repository.IProjectRepository;
+
+@Service
+public class ProjectServiceImpl implements IProjectService{
+	
+	@Autowired
+	IProjectRepository proRepo;
+	
+	@Override
+	public Project addProject(Project P) {
+		Project addedProject = proRepo.save(P);
+		return addedProject;
+	}
+
+	@Override
+	public Project deleteProjectById(int pId) {
+		Optional<Project> pntOpt = proRepo.findById(pId);
+			Project deletedProject = pntOpt.get();
+			proRepo.deleteById(pId);
+			return deletedProject;
+		}
+		
+	
+
+	@Override
+	public Project updateProject(int pId, Project pName) {
+		Optional<Project> pntOpt = proRepo.findById(pId);
+		Project updatedProject = pntOpt.get();
+		proRepo.save(pName);
+		return updatedProject;
+	}
+
+	@Override
+	public Project getProjectById(int pId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+
+

@@ -1,0 +1,6 @@
+package com.project.entity;
+
+@Entity
+public class Employee {
+
+}

@@ -1,0 +1,62 @@
+package com.project.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.entity.Project;
+import com.project.exception.ProjectExistsException;
+import com.project.repository.IProjectRepository;
+
+@Service
+public class ProjectServiceImpl implements IProjectService{
+	
+	@Autowired
+	IProjectRepository proRepo;
+	
+	@Override
+	public Project addProject(Project P) throws ProjectExistsException {
+		Optional<Project> Project1 = proRepo.findByProject(P.getProjectName());
+		if(Project1.isPresent()) {
+			throw new ProjectExistsException("Project already Exists with the name: " + P.getProjectName());
+		}
+		else {
+		Project addedProject = proRepo.save(P);
+		return addedProject;
+		}
+	}
+
+	@Override
+	public Project deleteProjectById(int pId) {
+		Optional<Project> pntOpt = proRepo.findById(pId);
+			Project deletedProject = pntOpt.get();
+			proRepo.deleteById(pId);
+			return deletedProject;
+		}
+	
+		
+	
+
+	@Override
+	public Project updateProject(int pId, Project pName) {
+		Optional<Project> pntOpt = proRepo.findById(pId);
+		Project updatedProject = pntOpt.get();
+		updatedProject.setProjectName(updatedProject.getProjectName());
+		updatedProject.setTeamMembers(updatedProject.getTeamMembers());
+		updatedProject.setTeamLead(updatedProject.getTeamLead());
+		updatedProject.setDeadLine(updatedProject.getDeadLine());
+		proRepo.save(updatedProject);
+		return updatedProject;
+	}
+
+	@Override
+	public Project getProjectById(int pId) {
+		Optional<Project> pntOpt = proRepo.findById(pId);
+		Project project = pntOpt.get();
+		return project;
+	}
+	
+}
+
+

@@ -7,7 +7,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import com.tasks.entity.Employee;
 import com.tasks.entity.Task;
 import com.tasks.exception.TaskExistsException;
 import com.tasks.exception.TaskNotFoundException;
@@ -18,6 +20,13 @@ public class TaskServiceImpl implements ITaskService {
 	
 	@Autowired
 	ITaskRepository taskRepo;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	public TaskServiceImpl(ITaskRepository taskRepo) {
+		this.taskRepo = taskRepo;
+	}
 	
 	@Override
 	public Task addTask(Task task) throws TaskExistsException {
@@ -36,7 +45,7 @@ public class TaskServiceImpl implements ITaskService {
 		if(t1.isPresent()) {
 			Task updatedTask = t1.get();
 			updatedTask.setTaskName(task.getTaskName());
-			updatedTask.setAllocatedEmp(task.getAllocatedEmp());
+			updatedTask.setEmpId(task.getEmpId());
 			updatedTask.setTimeDuration(task.getTimeDuration());
 			updatedTask.setComment(task.getComment());
 			taskRepo.save(updatedTask);
@@ -75,15 +84,23 @@ public class TaskServiceImpl implements ITaskService {
 		return tasks;
 	}
 
+//	@Override
+//	public Task getTaskByEmp(String allocatedEmp) throws TaskNotFoundException {
+//		Optional<Task> t1=taskRepo.findByAllocatedEmp(allocatedEmp);
+//		if(t1.isPresent()) {
+//			Task task = t1.get();
+//			return task;
+//		} else {
+//			throw new TaskNotFoundException("Task not found with allocatedEmp: "+ allocatedEmp);
+//		}
+//	}
+
 	@Override
-	public Task getTaskByEmp(String allocatedEmp) throws TaskNotFoundException {
-		Optional<Task> t1=taskRepo.findByAllocatedEmp(allocatedEmp);
-		if(t1.isPresent()) {
-			Task task = t1.get();
-			return task;
-		} else {
-			throw new TaskNotFoundException("Task not found with allocatedEmp: "+ allocatedEmp);
-		}
+	public Task getByEmpId(long empId) {
+		Task task = taskRepo.findByEmpId(empId);
+		Employee emp = restTemplate.getForObject("http://localhost:9090/employee/get/"+task.getEmpId(), Employee.class);
+		task.setEmployee(emp);
+		return task;
 	}
 
 }

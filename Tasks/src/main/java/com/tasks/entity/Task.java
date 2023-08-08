@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,9 +22,12 @@ public class Task {
 	@GeneratedValue
 	private int taskId;
 	private String taskName;
-	private String allocatedEmp;
+	private long empId;
 	@JsonFormat(pattern="HH:mm:ss")
 	private LocalTime timeDuration;
 	private String comment;
+	
+	@Transient
+	private Employee employee;
 
 }

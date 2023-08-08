@@ -1,0 +1,10 @@
+package com.project.service;
+
+import com.project.entity.Project;
+
+public interface IProjectService {
+	Project addProject(Project p);
+	Project deleteProjectById(int pId);
+	Project updateProject(int pId, String pName);
+	Project getProjectById(int pId);
+}
