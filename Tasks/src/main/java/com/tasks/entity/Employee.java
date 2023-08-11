@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Employee {
 	
-	private long empId;
-	private String empName;
-	private String empEmail;
+	private long employeeId;
+	private String employeeName;
+	private String emailId;
 
 }

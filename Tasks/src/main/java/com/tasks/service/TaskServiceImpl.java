@@ -45,7 +45,7 @@ public class TaskServiceImpl implements ITaskService {
 		if(t1.isPresent()) {
 			Task updatedTask = t1.get();
 			updatedTask.setTaskName(task.getTaskName());
-			updatedTask.setEmpId(task.getEmpId());
+			updatedTask.setEmployeeId(task.getEmployeeId());
 			updatedTask.setTimeDuration(task.getTimeDuration());
 			updatedTask.setComment(task.getComment());
 			taskRepo.save(updatedTask);
@@ -96,9 +96,9 @@ public class TaskServiceImpl implements ITaskService {
 //	}
 
 	@Override
-	public Task getByEmpId(long empId) {
-		Task task = taskRepo.findByEmpId(empId);
-		Employee emp = restTemplate.getForObject("http://localhost:9090/employee/get/"+task.getEmpId(), Employee.class);
+	public Task getByEmpId(long employeeId) {
+		Task task = taskRepo.findByEmployeeId(employeeId);
+		Employee emp = restTemplate.getForObject("http://localhost:9090/employee/get/"+task.getEmployeeId(), Employee.class);
 		task.setEmployee(emp);
 		return task;
 	}

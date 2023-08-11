@@ -8,7 +8,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @EnableEurekaServer
-@EnableDiscoveryClient
 public class EurekaApplication {
 
 	public static void main(String[] args) {

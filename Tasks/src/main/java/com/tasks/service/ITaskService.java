@@ -14,7 +14,7 @@ public interface ITaskService {
 	Task getTaskById(int taskId) throws TaskNotFoundException;
 	List<Task> getAllTasks();
 	//Task getTaskByEmp(String emp) throws TaskNotFoundException;
-	Task getByEmpId(long empId);
+	Task getByEmpId(long employeeId);
 	
 
 }

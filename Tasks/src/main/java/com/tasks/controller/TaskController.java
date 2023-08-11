@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ import com.tasks.service.TaskServiceImpl;
 
 @RestController
 @RequestMapping("/task")
+@CrossOrigin(origins="http://localhost:4200")
 public class TaskController {
 	
 	@Autowired
@@ -83,10 +85,10 @@ public class TaskController {
 //		return new ResponseEntity<>(task,HttpStatus.OK);
 //	}
 	
-	@GetMapping("/getByEmpId/{empId}")
-	ResponseEntity<Task> getByEmpId(@PathVariable long empId){
+	@GetMapping("/getByEmpId/{employeeId}")
+	ResponseEntity<Task> getByEmpId(@PathVariable long employeeId){
 		logger.info("Request to view a task by empId");
-		Task task = taskServ.getByEmpId(empId);
+		Task task = taskServ.getByEmpId(employeeId);
 		logger.info("Successfully viewed a task by empId");
 		return new ResponseEntity<>(task,HttpStatus.OK);
 	}

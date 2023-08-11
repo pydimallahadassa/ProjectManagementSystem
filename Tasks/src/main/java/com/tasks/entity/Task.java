@@ -22,7 +22,7 @@ public class Task {
 	@GeneratedValue
 	private int taskId;
 	private String taskName;
-	private long empId;
+	private long employeeId;
 	@JsonFormat(pattern="HH:mm:ss")
 	private LocalTime timeDuration;
 	private String comment;

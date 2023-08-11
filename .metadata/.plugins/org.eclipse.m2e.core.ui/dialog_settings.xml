@@ -6,10 +6,13 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\jwt-authentication"/>
+			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\Team"/>
+			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\Project-api-gateway"/>
+			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\ProjectManagementSystem-master"/>
 			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\eureka"/>
 			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\Employee-main"/>
 			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\Project-master"/>
-			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\ProjectManagementSystem-master"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

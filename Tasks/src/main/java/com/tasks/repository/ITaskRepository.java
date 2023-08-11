@@ -14,6 +14,6 @@ public interface ITaskRepository extends JpaRepository<Task, Integer> {
 
 	Optional<Task> findByTaskName(String taskName);
 
-	Task findByEmpId(long empId);
+	Task findByEmployeeId(long employeeId);
 
 }

@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "spring.jpa.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.username'"
+  },
+  {
+    "name": "spring.jpa.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.password'"
+  },
+  {
+    "name": "authentication.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'authentication.app.jwtSecret'"
+  }
+]}
