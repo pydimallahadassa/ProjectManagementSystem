@@ -52,9 +52,9 @@ public class AdminServiceImpl implements IAdminService{
 		return restTemplate.patchForObject("http://localhost:9090/employee/update",emp, Employee.class);
 	}
 
-	@Override
-	public List<Project> viewAllProjects() {
-		return (List<Project>) restTemplate.getForEntity("http://localhost:8082/project/getAll", Project.class);
-	}
+//	@Override
+//	public List<Project> viewAllProjects() {
+//		return (List<Project>) restTemplate.getForObject("http://localhost:8082/project/getAll", Project.class);
+//	}
 
 }

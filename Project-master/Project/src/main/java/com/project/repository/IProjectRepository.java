@@ -10,6 +10,8 @@ import com.project.entity.Project;
 @Repository
 public interface IProjectRepository extends JpaRepository<Project,Integer> {
 	Optional<Project> findByProjectName(String Project);
+
+	Project findByTeamLeadId(int teamLeadId);
 }
 	 
 

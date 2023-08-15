@@ -10,5 +10,6 @@ public interface ITeamService {
 	String deleteTeamById(int tId);
 	Team getTeamById(int tId);
 	List<Team> getAllTeams();
+	Team getByProjectId(int projectId);
 
 }

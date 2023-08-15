@@ -65,11 +65,11 @@ public class TeamLeaderController {
 	}
 	
 	// localhost:7001/TeamLeader/delete/2
-	@DeleteMapping("/delete/{tId}") 
-	public String deleteTeamLeaderById(@PathVariable int tId) throws InvalidUserId {
+	@DeleteMapping("/delete/{teamLeadId}") 
+	public String deleteTeamLeaderById(@PathVariable int teamLeadId) throws InvalidUserId {
 
 		try {
-			teamLeaderService.delete(tId);
+			teamLeaderService.delete(teamLeadId);
 
 		} catch (Exception e) {
 
@@ -77,7 +77,7 @@ public class TeamLeaderController {
 			e.printStackTrace();
 			return "Id not found";
 		}
-		return "Deleted Id = " + tId + " Data";
+		return "Deleted Id = " + teamLeadId + " Data";
 	}
 	
 	// localhost:7001/TeamLeader/loginTeamLeader/anu@gmail.com/vijju
@@ -88,10 +88,10 @@ public class TeamLeaderController {
 		return teamLeaderService.loginTeamLeader(email, password);
 	}
 
-	@GetMapping("/tId/{tId}") // localhost:7001/TeamLeader/tId/4
-	public TeamLeader getTeamleaderId(@PathVariable int tId) throws InvalidUserId {
+	@GetMapping("/getById/{teamLeadId}") // localhost:7001/TeamLeader/tId/4
+	public TeamLeader getTeamleaderId(@PathVariable int teamLeadId) throws InvalidUserId {
 
-		return teamLeaderService.getTeamLeaderById(tId);
+		return teamLeaderService.getTeamLeaderById(teamLeadId);
 
 	}
 	

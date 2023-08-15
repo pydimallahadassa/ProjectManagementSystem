@@ -32,8 +32,6 @@ public class TaskController {
 	@Autowired
 	TaskServiceImpl taskServ;
 	
-	@Autowired
-	private WebClient.Builder webClient;
 	
 	private static Logger logger = LogManager.getLogger();
 	

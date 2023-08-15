@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +24,7 @@ import com.project.service.ProjectServiceImpl;
 
 @RestController
 @RequestMapping("/project")
-
+@CrossOrigin(origins="http://localhost:4200")
 public class ProjectController {
 	@Autowired
 	ProjectServiceImpl projServ;
@@ -51,7 +52,7 @@ public class ProjectController {
 		return new ResponseEntity<>(updateProject,HttpStatus.CREATED);
 	}
 	@GetMapping("/get/{pId}")
-	ResponseEntity<Project> GetProjectById(@PathVariable int pId) throws ProjectNotFoundException{
+	ResponseEntity<Project> getProjectById(@PathVariable int pId) throws ProjectNotFoundException{
 		logger.info("Sending Request to get the Project by Id");
 		Project getProject = projServ.getProjectById(pId);
 		return new ResponseEntity<>(getProject,HttpStatus.OK);
@@ -61,6 +62,13 @@ public class ProjectController {
 		logger.info("Sending Request to get all the Projects");
 	List<Project> Projects= projServ.getAllProjects();
 	return new ResponseEntity<>(Projects, HttpStatus.OK);
+	}
+	
+	@GetMapping("/getByTL/{teamLeadId}")
+	ResponseEntity<Project> getByTeamLeadId(@PathVariable int teamLeadId){
+		logger.info("Sending Request to get the Project by TeamLeadId");
+		Project getProject = projServ.getByTeamLeadId(teamLeadId);
+		return new ResponseEntity<>(getProject,HttpStatus.OK);
 	}
 	
 

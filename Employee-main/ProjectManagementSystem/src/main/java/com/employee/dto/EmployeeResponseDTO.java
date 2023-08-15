@@ -5,15 +5,15 @@ public class EmployeeResponseDTO implements MyDTO{
 	private Long employeeId;
 	private String employeeName;
 	private String employeeDesignation;
-	private String projectName;
+	private int projectId;
 	private float rating;
-	public EmployeeResponseDTO(Long employeeId, String employeeName, String employeeDesignation, String projectName,
+	public EmployeeResponseDTO(long employeeId, String employeeName, String employeeDesignation, int projectId,
 			float rating) {
 		super();
 		this.employeeId = employeeId;
 		this.employeeName = employeeName;
 		this.employeeDesignation = employeeDesignation;
-		this.projectName = projectName;
+		this.projectId = projectId;
 		this.rating = rating;
 	}
 	public Long getEmployeeId() {
@@ -34,11 +34,11 @@ public class EmployeeResponseDTO implements MyDTO{
 	public void setEmployeeDesignation(String employeeDesignation) {
 		this.employeeDesignation = employeeDesignation;
 	}
-	public String getProjectName() {
-		return projectName;
+	public int getProjectId() {
+		return projectId;
 	}
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
+	public void setProjectId(int projectId) {
+		this.projectId = projectId;
 	}
 	public float getRating() {
 		return rating;

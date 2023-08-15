@@ -14,6 +14,6 @@ public interface IAdminService {
 	Project addProject(Project project);
 	Employee addEmployee(Employee emp);
 	Employee updateEmployee(long employeeId, Employee emp);
-	List<Project> viewAllProjects();
+//	List<Project> viewAllProjects();
 
 }

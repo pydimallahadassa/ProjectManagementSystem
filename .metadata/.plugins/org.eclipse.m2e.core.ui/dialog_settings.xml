@@ -6,6 +6,8 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\jwt-youtube-master"/>
+			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\login"/>
 			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\jwt-authentication"/>
 			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\Team"/>
 			<item value="C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\Project-api-gateway"/>

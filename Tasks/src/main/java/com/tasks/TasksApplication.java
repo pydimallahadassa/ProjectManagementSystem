@@ -13,7 +13,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class TasksApplication {
 	
 	@Bean
-	@LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }

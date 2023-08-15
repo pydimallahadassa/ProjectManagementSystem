@@ -2,8 +2,7 @@ package com.leader.main.service;
 
 
 import java.util.List;
-
-
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,19 +32,14 @@ public class TeamLeaderServiceImpl implements TeamLeaderService {
     }
 
     @Override
-    public TeamLeader getTeamLeaderById(Integer id) throws InvalidUserId {
-
-        if (id == null || id == 0) {
-            throw new InvalidUserId("Invalid user id");
-        }
-
-        TeamLeader teamLeader = teamLeaderRepository.getTeamLeaderbytId(id);
-
-        if (teamLeader == null) {
-            throw new InvalidUserId("No Team Leader exists with the provided id: " + id);
-        }
-
-        return teamLeader;
+    public TeamLeader getTeamLeaderById(int teamLeadId) throws InvalidUserId {
+        Optional<TeamLeader> t1=teamLeaderRepository.findByTeamLeadId(teamLeadId);
+		if(t1.isPresent()) {
+			TeamLeader teamLead=t1.get();
+			return teamLead;
+		}else {
+			throw new InvalidUserId("Task not found with id: "+ teamLeadId);
+		}
     }
 
     public TeamLeader updateTeamLeader(TeamLeader teamLeader) throws InvalidUserId {
@@ -55,8 +49,8 @@ public class TeamLeaderServiceImpl implements TeamLeaderService {
     }
 
     @Override
-    public void delete(int tId) throws InvalidUserId {
-    	teamLeaderRepository.deleteById(tId);
+    public void delete(int teamLeadId) throws InvalidUserId {
+    	teamLeaderRepository.deleteById(teamLeadId);
     }
 
     @Override

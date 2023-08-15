@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,8 +25,12 @@ public class Project {
 	@NotEmpty(message = "Name may not be empty")
 	private String projectName;
 	private int teamMembers;
-	private String teamLead;
+	private int teamLeadId;
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate deadLine;
+	
+	@Transient
+	private TeamLeader teamLeader;
+	
 
 }

@@ -11,7 +11,7 @@ import com.employee.entity.Employee;
 public class EmployeeDTOConverter {
 	
 	public static EmployeeResponseDTO convertToDTO(Employee employee) {
-		return new EmployeeResponseDTO(employee.getEmployeeId(),employee.getEmployeeName(),employee.getEmployeeDesignation(),employee.getProjectName(),employee.getRating());
+		return new EmployeeResponseDTO(employee.getEmployeeId(),employee.getEmployeeName(),employee.getEmployeeDesignation(),employee.getProjectId(),employee.getRating());
 	}
 
 }

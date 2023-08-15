@@ -15,8 +15,8 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: admin
-        uri: http://localhost:8080/
+      - id: ADMIN-SERVICE
+        uri: http://localhost:8081/
         predicates:
         - Path=/admin/**
         
@@ -31,7 +31,12 @@ spring:
         - Path=/team/**
         
         - id: PROJECT-SERVICE
-          uri: http://localhost:8082/project_service
+          uri: http://localhost:8082/
+          predicates:
+        - Path=/project/**
+        
+        - id: LOGIN-SERVICE
+          uri: http://localhost:8088/
           predicates:
         - Path=/project/**
         

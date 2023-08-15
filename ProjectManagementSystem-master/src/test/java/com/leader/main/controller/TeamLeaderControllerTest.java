@@ -83,7 +83,7 @@ class TeamLeaderControllerTest {
     @Test
      void testUpdateTeamLeader() throws InvalidUserId {
         TeamLeader teamLeader = new TeamLeader();
-        teamLeader.settId(1);
+        teamLeader.setTeamLeadId(1);
         teamLeader.setFirstName("John");
         teamLeader.setLastName("Doe");
         teamLeader.setEmail("john@example.com");
@@ -99,15 +99,15 @@ class TeamLeaderControllerTest {
 
     @Test
      void testDeleteTeamLeaderById() throws InvalidUserId {
-        int tId = 1;
+        int teamLeadId = 1;
 
-        String expectedResult = "Deleted Id = " + tId + " Data";
-        doNothing().when(teamLeaderService).delete(tId);
+        String expectedResult = "Deleted Id = " + teamLeadId + " Data";
+        doNothing().when(teamLeaderService).delete(teamLeadId);
 
-        String result = teamLeaderController.deleteTeamLeaderById(tId);
+        String result = teamLeaderController.deleteTeamLeaderById(teamLeadId);
 
         assertEquals(expectedResult, result);
-        verify(teamLeaderService, times(1)).delete(tId);
+        verify(teamLeaderService, times(1)).delete(teamLeadId);
     }
 
     @Test
@@ -144,7 +144,7 @@ class TeamLeaderControllerTest {
 
         // Mock the response from the team leader service
         TeamLeader leader = new TeamLeader();
-        leader.setmId(mId);
+        leader.setMId(mId);
         when(teamLeaderService.getTeamLeaderById(mId)).thenReturn(leader);
 
         // Mock the response from the team member API using RestTemplate

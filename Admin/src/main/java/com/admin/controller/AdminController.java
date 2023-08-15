@@ -43,12 +43,12 @@ public class AdminController {
 		return new ResponseEntity<>(newemp, HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/viewprojects")
-	ResponseEntity<List<Project>> viewAllProjects() {
-		logger.info("Sending request to add new employee");
-		List<Project> projects = adminServ.viewAllProjects();
-		logger.info("Added new employee");
-		return new ResponseEntity<>(projects, HttpStatus.CREATED);
-	}
+//	@GetMapping("/viewprojects")
+//	ResponseEntity<List<Project>> viewAllProjects() {
+//		logger.info("Sending request to add new employee");
+//		List<Project> projects = adminServ.viewAllProjects();
+//		logger.info("Added new employee");
+//		return new ResponseEntity<>(projects, HttpStatus.CREATED);
+//	}
 
 }

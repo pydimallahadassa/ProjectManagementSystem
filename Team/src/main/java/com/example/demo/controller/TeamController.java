@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ import com.example.demo.repository.ITeamRepository;
 import com.example.demo.service.ITeamService;
 
 @RestController
-@RequestMapping("/Team")
+@RequestMapping("/team")
 @CrossOrigin("http://localhost:4200/")
 public class TeamController {
 	
@@ -32,16 +33,14 @@ public class TeamController {
 		return new ResponseEntity<>(newTeam, HttpStatus.CREATED);
 	}
 
-	/*
-	 * public Team addTeam(@RequestBody Team team) {
-	 * 
-	 * 
-	 * return teamService.addTeam(team);
-	 * 
-	 * }
-	 */
 	@GetMapping("/allTeam") // localhost:8761/Team/allTeammembers
 	public List<Team> getAllTeam() {
 		return teamService.getAllTeams();
+	}
+	
+	@GetMapping("/getByProjectId/{projectId}")
+	ResponseEntity<Team> getByProjectId(@PathVariable int projectId){
+		Team team = teamService.getByProjectId(projectId);
+		return new ResponseEntity<>(team,HttpStatus.OK);
 	}
 }

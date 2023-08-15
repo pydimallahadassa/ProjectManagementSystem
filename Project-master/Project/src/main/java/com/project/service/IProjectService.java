@@ -3,6 +3,7 @@ package com.project.service;
 import java.util.List;
 
 import com.project.entity.Project;
+import com.project.entity.TeamLeader;
 import com.project.exception.ProjectExistsException;
 import com.project.exception.ProjectNotFoundException;
 
@@ -12,4 +13,5 @@ public interface IProjectService {
 	Project updateProject(int pId, Project pName)throws ProjectNotFoundException;
 	Project getProjectById(int pId) throws ProjectNotFoundException;
 	List<Project> getAllProjects();
+	Project getByTeamLeadId(int teamLeadId);
 }

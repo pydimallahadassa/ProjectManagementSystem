@@ -18,7 +18,7 @@ public interface TeamLeaderService {
 
 	public List<TeamLeader> getAllTeamLeader();
 
-	public TeamLeader getTeamLeaderById(Integer id) throws InvalidUserId;
+	public TeamLeader getTeamLeaderById(int teamLeadId) throws InvalidUserId;
 
 	public TeamLeader updateTeamLeader(TeamLeader teamLeader) throws InvalidUserId;
 

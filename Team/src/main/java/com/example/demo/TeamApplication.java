@@ -9,6 +9,11 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class TeamApplication {
+	
+	@Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 
 	public static void main(String[] args) {
 		SpringApplication.run(TeamApplication.class, args);
