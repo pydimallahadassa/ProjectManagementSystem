@@ -8415,3 +8415,11 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.webjars:s
 2023-08-15 23:24:34,399 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2023-08-15 23:24:34,506 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2023-08-15 23:24:34,510 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\Employee-main\ProjectManagementSystem\src\test\resources
+2023-08-16 01:24:48,483 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-08-16 01:24:48,484 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-08-16 01:24:48,484 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2023-08-16 01:24:48,485 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2023-08-16 01:24:48,488 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-08-16 01:24:48,489 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-08-16 01:24:48,489 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\phadassa\Documents\workspace-spring-tool-suite-4-4.17.0.RELEASE\IDigital\ProjectManagementSystem-master\src\test\resources
+2023-08-24 11:20:14,325 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
