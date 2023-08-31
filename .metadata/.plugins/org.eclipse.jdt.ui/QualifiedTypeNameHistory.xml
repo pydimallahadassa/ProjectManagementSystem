@@ -11,8 +11,6 @@
     <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
     <fullyQualifiedTypeName name="jakarta.validation.constraints.Pattern"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
-    <fullyQualifiedTypeName name="com.tasks.exception.TaskExistsException"/>
-    <fullyQualifiedTypeName name="com.tasks.exception.TaskNotFoundException"/>
     <fullyQualifiedTypeName name="org.apache.logging.log4j.Logger"/>
     <fullyQualifiedTypeName name="org.apache.logging.log4j.LogManager"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
@@ -22,7 +20,6 @@
     <fullyQualifiedTypeName name="com.admin.entity.AdminEntity"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="com.admin.repository.IAdminRepository"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.admin.service.AdminServiceImpl"/>
     <fullyQualifiedTypeName name="com.admin.entity.Project"/>
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration"/>
@@ -37,7 +34,6 @@
     <fullyQualifiedTypeName name="com.admin.entity.Employee"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
     <fullyQualifiedTypeName name="com.employee.entity.Project"/>
     <fullyQualifiedTypeName name="com.project.entity.TeamLeader"/>
@@ -52,4 +48,16 @@
     <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
+    <fullyQualifiedTypeName name="com.tasks.service.ITaskService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeAll"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterAll"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterEach"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="com.tasks.exception.TaskExistsException"/>
+    <fullyQualifiedTypeName name="com.tasks.entity.Task"/>
+    <fullyQualifiedTypeName name="com.tasks.exception.TaskNotFoundException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
